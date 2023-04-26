@@ -1,7 +1,9 @@
-const Booking = ({ booking }) => {
+import { deleteBooking } from "../services/BookingService";
 
-  onDelete = () => {
-    
+const Booking = ({ booking, removeBooking }) => {
+
+  const onDelete = () => {
+    deleteBooking(booking._id).then(() => removeBooking(booking._id))
   }
 
   return (
@@ -10,7 +12,7 @@ const Booking = ({ booking }) => {
         <p>{booking.name}</p>
         <p>{booking.email}</p>
         <p>Checked in: {`${booking.checkedIn}`}</p>
-        <button onDelete={onDelete}>🗑</button>
+        <button onClick={onDelete}>🗑</button>
       </li>
     </>
   );

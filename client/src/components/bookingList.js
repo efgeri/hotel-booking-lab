@@ -1,9 +1,9 @@
 import Booking from "./booking";
 import styled from "styled-components";
 
-const BookingList = ({ bookings }) => {
+const BookingList = ({ bookings, removeBooking }) => {
   const allBooking = bookings.map((booking) => {
-    return <Booking booking={booking} key={booking._id} />;
+    return <Booking removeBooking={removeBooking} booking={booking} key={booking._id} />;
   });
 
   return (
