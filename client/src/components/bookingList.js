@@ -3,7 +3,14 @@ import styled from "styled-components";
 
 const BookingList = ({ bookings, removeBooking, modifyBooking }) => {
   const allBooking = bookings.map((booking) => {
-    return <Booking removeBooking={removeBooking} booking={booking} key={booking._id} modifyBooking={modifyBooking} />;
+    return (
+      <Booking
+        removeBooking={removeBooking}
+        booking={booking}
+        key={booking._id}
+        modifyBooking={modifyBooking}
+      />
+    );
   });
 
   return (
@@ -14,7 +21,7 @@ const BookingList = ({ bookings, removeBooking, modifyBooking }) => {
 };
 
 const StyledList = styled.ul`
-    list-style: none;
+  list-style: none;
 `;
 
 export default BookingList;
