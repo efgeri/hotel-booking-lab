@@ -87,7 +87,7 @@ const BookingForm = ({ addBooking }) => {
           value="false"
         />
         <div>
-          <input type="submit" value="DETONATE" id="save" />
+          <input type="submit" value="Add Booking" id="save" />
         </div>
       </form>
     </>

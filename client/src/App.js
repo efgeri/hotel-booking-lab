@@ -20,11 +20,18 @@ function App() {
     setBookings(updatedBookings);
   };
 
+  const modifyBooking = (updatedBooking) => {
+    const copyBookings = [...bookings]
+    const index = bookings.findIndex(booking => booking._id === updatedBooking._id)
+    copyBookings[index] = updatedBooking
+    setBookings([copyBookings])
+  }
+
   return (
     <>
-      <h1>Aneeqa's hotel booking SYSTEM</h1>
+      <h1>Aneeqa & Geri's hotel booking SYSTEM</h1>
       <div className="App">
-        <BookingList bookings={bookings} removeBooking={removeBooking} />
+        <BookingList bookings={bookings} removeBooking={removeBooking} modifyBooking={modifyBooking} />
         <BookingForm addBooking={addBooking} />
       </div>
     </>
