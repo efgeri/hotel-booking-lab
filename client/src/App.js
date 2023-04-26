@@ -24,7 +24,8 @@ function App() {
     const copyBookings = [...bookings]
     const index = bookings.findIndex(booking => booking._id === updatedBooking._id)
     copyBookings[index] = updatedBooking
-    setBookings([copyBookings])
+    console.log(copyBookings)
+    setBookings(copyBookings)
   }
 
   return (

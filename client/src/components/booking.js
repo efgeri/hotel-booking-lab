@@ -27,7 +27,8 @@ const Booking = ({ booking, removeBooking, modifyBooking}) => {
       value = true;
     }
     booking.checkedIn = value
-    updateBooking(booking._id, booking.checkedIn).then(() => modifyBooking(booking))
+    const payload = {checkedIn: value}
+    updateBooking(booking._id, payload).then(() => modifyBooking(booking))
     
   }
 
@@ -38,20 +39,24 @@ const Booking = ({ booking, removeBooking, modifyBooking}) => {
         <p>{booking.email}</p>
         <p>Checked in: {`${booking.checkedIn}`}</p>
         <div>
-        <label htmlFor="checkin">Checked in?</label>
-        <select defaultValue={booking.checkedIn} name="updateCheckIn" id="checkin">
-          <option value="true" >Yes</option>
-          <option value="false">No</option>
-        </select>
-        {/* <label htmlFor="checkinfalse">No</label>
+        <label htmlFor="checkintrue">Yes</label>
+        <input
+          onChange={handleEdit}
+          type="radio"
+          id="checkintrue"
+          name={`checkedIn${booking._id}`}
+          checked={booking.checkedIn === true}
+          value="true"
+        />
+        <label htmlFor="checkinfalse">No</label>
         <input
           onChange={handleEdit}
           type="radio"
           id="checkinfalse"
-          name="checkedIn"
+          name={`checkedIn${booking._id}`}
           checked={booking.checkedIn === false}
           value="false"
-        /> */}
+        />
         </div>
         <button onClick={handleEdit}>Update</button>
         <button onClick={onDelete}>🗑</button>

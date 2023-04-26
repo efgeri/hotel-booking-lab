@@ -10,8 +10,6 @@ const BookingForm = ({ addBooking }) => {
 
   const onChange = (e) => {
     const newFormData = { ...formData };
-    console.log(newFormData);
-    console.log(formData);
     newFormData[e.target.name] = e.target.value;
     setFormData(newFormData);
   };
@@ -25,7 +23,6 @@ const BookingForm = ({ addBooking }) => {
       value = true;
     }
     veryNewFormData[e.target.name] = value;
-    console.log(formData)
     setFormData(veryNewFormData);
   };
 
