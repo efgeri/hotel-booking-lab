@@ -8,13 +8,13 @@ const BookingList = ({ bookings }) => {
 
   return (
     <section>
-      <styledList>{allBooking}</styledList>
+      <StyledList>{allBooking}</StyledList>
     </section>
   );
 };
 
-// const styledList = styled.ul`
-//     list-style: none;
-// `;
+const StyledList = styled.ul`
+    list-style: none;
+`;
 
 export default BookingList;

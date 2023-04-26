@@ -13,12 +13,16 @@ function App() {
     getBookings().then((allBookings) => setBookings(allBookings))
   }, [])
 
+  const addBooking = (booking) => {
+    setBookings([...bookings, booking])
+  }
+
   return (
     <>
       <h1>Aneeqa's hotel booking SYSTEM</h1>
     <div className="App">
       <BookingList bookings={bookings}/>
-      <BookingForm />
+      <BookingForm addBooking={addBooking}/>
     </div>
     </>
   );
